@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color1: white;
+  --color2: whitesmoke;
+}
+
+.header {
+  margin: 2rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+.counter-display {
+  margin: 2rem;
+  font-size: 2.5rem;
+}
+
+.btn {
+  margin: 2rem;
+  padding: 1rem;
+  border: 2px solid whitesmoke;
+  background: gray;
+  cursor: pointer;
+  color: white;
+  border-radius: 200px;
+}
+
+.btn:hover {
+  background: white;
+  color: gray;
+  transform: scale(1.1);
+  border: 2px solid rgb(209, 207, 207);
+}
+
+.container {
+  background: whitesmoke;
+  width: 30rem;
+  margin: 2rem;
+  padding: 1rem;
+}
+
+.container {
+  position: relative;
+  top: 25vh;
+  left: 25rem;
+}
