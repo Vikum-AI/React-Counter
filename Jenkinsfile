@@ -1,5 +1,10 @@
 pipeline {
     agent any
+
+    tools {
+        nodejs 'NodeJS 16.15.0'
+    }
+
     environment {
         PATH = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/path/to/node:$PATH"
         DIRECTORY_PATH = '/path/to/code/directory'
