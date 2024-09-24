@@ -1,7 +1,7 @@
 pipeline {
     agent any
-    
     environment {
+        PATH = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/path/to/node:$PATH"
         DIRECTORY_PATH = '/path/to/code/directory'
         TESTING_ENVIRONMENT = 'StagingEnv'
         PRODUCTION_ENVIRONMENT = 'ProductionEnv'
@@ -13,7 +13,6 @@ pipeline {
                 script {
                     try {
                         echo "Building the application"
-                        sh 'make env'
                         sh 'make build'
                     } catch (Exception e) {
                         currentBuild.result = 'FAILURE'
