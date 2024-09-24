@@ -10,8 +10,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Fetching the source code from the directory path specified by the environment variable: ${env.DIRECTORY_PATH}"
-                echo "Using Maven to compile the code and generate artifacts"
+                script {
+                    try {
+                        echo "Building the application"
+                        sh 'make build'
+                    } catch (Exception e) {
+                        currentBuild.result = 'FAILURE'
+                        throw e
+                    } finally {
+                        sendEmail('Build')
+                    }
+                }
             }
         }
         
@@ -64,6 +73,8 @@ pipeline {
         stage('Deploy to Staging') {
             steps {
                 echo "Deploying the application to the staging environment: ${env.TESTING_ENVIRONMENT}"
+                sh 'make deploy-staging'
+
             }
         }
         
@@ -78,6 +89,7 @@ pipeline {
                 script {
                     try {
                         echo "Deploying the application to the production environment: ${env.PRODUCTION_ENVIRONMENT}"
+                        sh 'make deploy-prod'
                     } catch (Exception e) {
                         currentBuild.result = 'FAILURE'
                         throw e
