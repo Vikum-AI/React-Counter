@@ -23,6 +23,7 @@ pipeline {
                         sh 'make build'
                     } catch (Exception e) {
                         currentBuild.result = 'FAILURE'
+                        echo "Build failed"
                         throw e
                     } finally {
                         sendEmail('Build')
