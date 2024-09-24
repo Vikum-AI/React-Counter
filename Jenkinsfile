@@ -18,7 +18,6 @@ pipeline {
                 script {
                     try {
                         echo "Building the application"
-                        echo $NETLIFY_ACCES_TOKEN
                         sh 'make link'
                         sh 'make build'
                     } catch (Exception e) {
