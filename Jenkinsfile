@@ -10,6 +10,7 @@ pipeline {
         DIRECTORY_PATH = '/path/to/code/directory'
         TESTING_ENVIRONMENT = 'StagingEnv'
         PRODUCTION_ENVIRONMENT = 'ProductionEnv'
+        NETLIFY_ACCES_TOKEN = 'nfp_UiyBEBCBLMgWMi1H2rqp7EPuCuvKXZC959e3'
     }
     
     stages {
