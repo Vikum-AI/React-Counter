@@ -13,6 +13,7 @@ pipeline {
                 script {
                     try {
                         echo "Building the application"
+                        sh 'make env'
                         sh 'make build'
                     } catch (Exception e) {
                         currentBuild.result = 'FAILURE'
