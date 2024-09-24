@@ -13,7 +13,7 @@ pipeline {
                 script {
                     try {
                         echo "Building the application"
-                        sh 'make build'
+                        sh 'npm install'
                     } catch (Exception e) {
                         currentBuild.result = 'FAILURE'
                         throw e
