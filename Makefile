@@ -1,6 +1,8 @@
 .PHONY: build deploy-prod
 
 env:
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+	nvm install 16.15.0
 	npm install -g netlify-cli
 
 build:
