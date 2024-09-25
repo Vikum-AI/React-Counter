@@ -75,7 +75,6 @@ pipeline {
                         sh 'npm audit'
                     } catch (Exception e) {
                         currentBuild.result = 'FAILURE'
-                        throw e
                     } finally {
                         sendEmail('Security Scan')
                     }
