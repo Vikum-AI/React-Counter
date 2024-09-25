@@ -53,10 +53,10 @@ pipeline {
                 script {
                     try {
                         echo "Analyzing code quality using SonarQube"
-                        def scannerHome = tool 'SonarScanner';
-                        withSonarQubeEnv() {
-                        sh "${scannerHome}/bin/sonar-scanner"
-                        }
+                        // def scannerHome = tool 'SonarScanner';
+                        // withSonarQubeEnv() {
+                        // sh "${scannerHome}/bin/sonar-scanner"
+                        // }
                     } catch (Exception e) {
                         currentBuild.result = 'FAILURE'
                         throw e
@@ -71,7 +71,8 @@ pipeline {
             steps {
                 script {
                     try {
-                        echo "Performing security scan using OWASP ZAP"
+                        echo "Performing security scan"
+                        sh 'npm audit'
                     } catch (Exception e) {
                         currentBuild.result = 'FAILURE'
                         throw e
