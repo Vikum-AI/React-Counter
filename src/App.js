@@ -13,7 +13,7 @@ export default function App() {
     <div className='container'>
 
 
-    <h1 className="header"> React Counter Deployment</h1>
+    <h1 className="header"> React Counter Test</h1>
     <p className="counter-display">{counter}</p>
 
 
