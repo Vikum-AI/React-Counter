@@ -53,6 +53,10 @@ pipeline {
                 script {
                     try {
                         echo "Analyzing code quality using SonarQube"
+                        def scannerHome = tool 'SonarScanner';
+                        withSonarQubeEnv() {
+                        sh "${scannerHome}/bin/sonar-scanner"
+                        }
                     } catch (Exception e) {
                         currentBuild.result = 'FAILURE'
                         throw e

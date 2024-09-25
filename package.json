@@ -38,6 +38,7 @@
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
     "jest": "^26.6.0",
-    "netlify-cli": "^17.36.2"
+    "netlify-cli": "^17.36.2",
+    "sonarqube-scanner": "^4.2.3"
   }
 }
