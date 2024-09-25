@@ -19,7 +19,6 @@ pipeline {
                 script {
                     try {
                         echo "Building the application"
-                        sh 'make link'
                         sh 'make build'
                     } catch (Exception e) {
                         currentBuild.result = 'FAILURE'
