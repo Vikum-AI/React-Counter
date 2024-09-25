@@ -37,6 +37,7 @@ pipeline {
                     try {
                         echo "Running unit tests using JUnit"
                         echo "Running integration tests using JUnit"
+                        sh 'npm test'
                     } catch (Exception e) {
                         currentBuild.result = 'FAILURE'
                         throw e
